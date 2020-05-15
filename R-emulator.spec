@@ -4,17 +4,15 @@
 #
 Name     : R-emulator
 Version  : 1.2.20
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/emulator_1.2-20.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/emulator_1.2-20.tar.gz
 Summary  : Bayesian Emulation of Computer Programs
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-mvtnorm
-BuildRequires : R-markdown
 BuildRequires : R-mvtnorm
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 Allows one to estimate the output of a computer program,
@@ -33,21 +31,22 @@ Allows one to estimate the output of a computer program,
 
 %prep
 %setup -q -c -n emulator
+cd %{_builddir}/emulator
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571823673
+export SOURCE_DATE_EPOCH=1589567549
 
 %install
-export SOURCE_DATE_EPOCH=1571823673
+export SOURCE_DATE_EPOCH=1589567549
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
