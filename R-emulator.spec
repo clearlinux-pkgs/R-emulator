@@ -7,7 +7,7 @@
 #
 Name     : R-emulator
 Version  : 1.2.24
-Release  : 46
+Release  : 47
 URL      : https://cran.r-project.org/src/contrib/emulator_1.2-24.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/emulator_1.2-24.tar.gz
 Summary  : Bayesian Emulation of Computer Programs
